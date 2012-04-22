@@ -111,7 +111,7 @@ class AbacusCommand(sublime_plugin.TextCommand):
                 #up above!
                 token_pos           = None
                 safe_token          = re.escape(token)
-                token_matcher       = re.compile(r"(?<![^a-zA-Z0-9_ \007])%s(?![^a-zA-Z0-9_ \007])" % (safe_token))
+                token_matcher       = re.compile(r"(?<![^a-zA-Z0-9_ \007])%s(?![^a-zA-Z0-9_# \007])" % (safe_token))
                 potential_matches   = [m for m in token_matcher.finditer(collapsed)]
                 
                 if debug:
