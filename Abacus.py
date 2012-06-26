@@ -67,12 +67,15 @@ class AbacusCommand(sublime_plugin.TextCommand):
             self.view.replace(edit, full_line, candidate["replacement"])
             
         #Scroll and muck with the selection
-        self.view.sel().clear()
-        for region in [self.region_from_line_number(changed["line"]) for changed in candidates]:
-            start_of_right_col  = region.begin() + max_indent + max_left_col_width
-            insertion_point     = sublime.Region(start_of_right_col, start_of_right_col)
-            self.view.sel().add(insertion_point)
-            #self.view.show_at_center(insertion_point)
+        if candidates:
+            self.view.sel().clear()
+            for region in [self.region_from_line_number(changed["line"]) for changed in candidates]:
+                start_of_right_col  = region.begin() + max_indent + max_left_col_width
+                insertion_point     = sublime.Region(start_of_right_col, start_of_right_col)
+                self.view.sel().add(insertion_point)
+                #self.view.show_at_center(insertion_point)
+        else:
+            sublime.status_message('Abacus - no alignment token found on selected line(s)')
             
     def sort_separators(self, separators):
         return sorted(separators, key=lambda sep: -len(sep["token"]))
