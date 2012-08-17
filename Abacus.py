@@ -115,7 +115,9 @@ class AbacusCommand(sublime_plugin.TextCommand):
                 potential_matches   = [m for m in token_matcher.finditer(collapsed)]
                 
                 if debug:
+                    print "Pattern:"
                     print token_matcher.pattern
+                    print "Matches:"
                     print potential_matches
                 
                 if len(potential_matches):
@@ -127,7 +129,7 @@ class AbacusCommand(sublime_plugin.TextCommand):
                         
                     #Do you see what I see?
                     if debug:
-                        sys.stdout.write("%s\n" % line_content)
+                        sys.stdout.write("%s\n" % line_content.encode("ascii", "ignore"))
                         sys.stdout.write(" " * token_pos)
                         sys.stdout.write("^\n")
                     
