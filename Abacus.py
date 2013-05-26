@@ -119,10 +119,10 @@ class AbacusCommand(sublime_plugin.TextCommand):
                 potential_matches   = [m for m in token_matcher.finditer(collapsed)]
                 
                 if debug:
-                    print "Pattern:"
-                    print token_matcher.pattern
-                    print "Matches:"
-                    print potential_matches
+                    print("Pattern:")
+                    print(token_matcher.pattern)
+                    print("Matches:")
+                    print(potential_matches)
                 
                 if len(potential_matches):
                     #Split on the first/last occurrence of the token
