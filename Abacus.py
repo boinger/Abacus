@@ -17,7 +17,7 @@ class AbacusCommand(sublime_plugin.TextCommand):
 
         #Run through the separators accumulating alignment candidates
         #starting with the longest ones i.e. '==' before '='.
-        longest_first   = self.sort_separators([ss for ss in syntax_specific if ss not in separators] + separators)
+        longest_first   = self.sort_separators(syntax_specific + [sep for sep in separators if sep not in syntax_specific])
 
         #Favor those that lean right so assignments with slice notation in them
         #get handled sanely
