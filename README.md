@@ -54,6 +54,6 @@ and Abacus will dump its thoughts out to Sublime Text's console like so:
 Caveats
 ============
 
-I've used nothing but Macs since 1984 and do absolutely **no** testing in Windows or Ububian's window manager of the minute. If something's broken in some OS I don't own, you'll need to have a suggestion as to how it can be fixed as I'm unlikely to have any idea what you're talking about.
+Original author's note: I've used nothing but Macs since 1984 and do absolutely **no** testing in Windows or Ububian's window manager of the minute. If something's broken in some OS I don't own, you'll need to have a suggestion as to how it can be fixed as I'm unlikely to have any idea what you're talking about.
 
-I don't care if you like real tabs or Windows line endings and don't bother with handling them. Seriously, what year is this? 
+I don't care if you like real tabs or Windows line endings and don't bother with handling them. Seriously, what year is this?
